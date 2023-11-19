@@ -1,11 +1,12 @@
 const mongoose =require("mongoose")
 
-const DB_HOST =
-  "mongodb+srv://diving:SFKjiTZQEvWDWRSo@cluster0.59shgmv.mongodb.net/?retryWrites=true&w=majority";
+console.log(process.env.DB_HOST)
+const { DB_HOST } = process.env.DB_HOST
+ 
 
-mongoose.connect(DB_HOST).then(() => {
-    console.log("OK oleg")
-})
+mongoose.connect(DB_HOST)
+    .then(() =>  console.log("conect ok"))
+    .catch(err => console.log(err.massage));
 
 
 // const mongoose = require("mongoose")
